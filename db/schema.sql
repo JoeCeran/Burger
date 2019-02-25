@@ -1,12 +1,12 @@
--- Created the DB "wizard_schools_db" (only works on local connections)
-CREATE DATABASE burgers_db;
-USE burgers_db;
+### Schema
 
--- Created the table "schools" 
-CREATE TABLE burgers
+CREATE DATABASE burger_db;
+USE burger_db;
+
+CREATE TABLE cats
 (
-  id int AUTO_INCREMENT,
-  burger_name VARCHAR (30) NOT NULL,
-  devoured BOOLEAN,
-  PRIMARY KEY (id)
+	id int NOT NULL AUTO_INCREMENT,
+	burger_name varchar(255) NOT NULL,
+	devoured BOOLEAN DEFAULT false,
+	PRIMARY KEY (id)
 );

@@ -18,11 +18,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JoeCeran/Node-Express-Handlebars.git"
+    "url": "git+https://github.com/JoeCeran/Burger.git"
   },
   "bugs": {
-    "url": "https://github.com/JoeCeran/Node-Express-Handlebars/issues"
+    "url": "https://github.com/JoeCeran/Burger/issues"
   },
-  "homepage": "https://github.com/JoeCeran/Node-Express-Handlebars#readme",
+  "homepage": "https://github.com/JoeCeran/Burger#readme",
   "description": ""
 }

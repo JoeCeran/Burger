@@ -22,24 +22,21 @@
   {{/each}}
 </ul>
 
-<script type="text/javascript">
-$(function () {
-  $(".eatBurger").on("click", function (event) {
-    let id = $(this).data("id");
-    let devoured = true;
-    // Send the PUT request.
-    $.ajax("/api/burgers/" + id, {
-      type: "PUT",
-      data: devoured
-    }).then(
-      function () {
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
-  });
-
-  function cookBurger() {
+ <script type="text/javascript">
+    $(document).on("click", ".eatBurger", eatBurger);
+    $(document).on("click", ".cookBurger", cookBurger)
+    function eatBurger() {
+        let id = $(this).data("id")
+        let eaten = {devoured: 1}
+        $.ajax("/api/burgers/" + id, {
+            method: "PUT",
+            data: eaten
+        }).then(function(){
+            console.log("Burger status changed")
+            location.reload()
+        })
+    }
+    function cookBurger() {
         let id = $(this).data("id")
         let eaten = {devoured: 0}
         $.ajax("/api/burgers/" + id, {
@@ -50,5 +47,4 @@ $(function () {
             location.reload()
         })
     }
-
-</script>
+    </script>

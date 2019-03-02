@@ -40,12 +40,10 @@ $(function() {
 
   $(".deleteBurger").on("click", function(event) {
     var id = $(this).data("id");
-    var devoured = false;
 
-    // Send the PUT request.
+    // Send the DELETE request.
     $.ajax("/api/burgers/" + id, {
-      type: "PUT",
-      data: devoured
+      type: "DELETE"
     }).then(
       function() {
         console.log("deleted burger", id);

@@ -12,32 +12,8 @@
 	<body>
 		{{{ body }}}
 
-		 <script type="text/javascript">
-    $(document).on("click", ".eatBurger", eatBurger);
-    $(document).on("click", ".makeBurger", makeBurger)
-    function eatBurger() {
-        let id = $(this).data("id")
-        let eaten = {devoured: 1}
-        $.ajax("/api/burgers/" + id, {
-            method: "PUT",
-            data: eaten
-        }).then(function(){
-            console.log("Burger status changed")
-            location.reload()
-        })
-    }
-    function makeBurger() {
-        let id = $(this).data("id")
-        let eaten = {devoured: 0}
-        $.ajax("/api/burgers/" + id, {
-            method: "PUT",
-            data: eaten
-        }).then(function(){
-            console.log("Burger status changed")
-            location.reload()
-        })
-    }
-    </script>
+	
+   
 	</body>
 	
 </html>

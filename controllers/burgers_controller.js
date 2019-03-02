@@ -5,6 +5,14 @@ var router = express.Router();
 // Import the model (burger.js) to use its database functions.
 var burger = require("../models/burgers.js");
 
+router.get("/", function(req, res) {
+  burger.all(function(data) {
+    var hbsObject = {
+      burgers: data
+    };
+    res.render("index", hbsObject);
+  });
+});
 
 router.post("/api/burgers", function(req, res) {
   req.body.devoured = false;

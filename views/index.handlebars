@@ -39,4 +39,16 @@ $(function () {
     );
   });
 
+  function cookBurger() {
+        let id = $(this).data("id")
+        let eaten = {devoured: 0}
+        $.ajax("/api/burgers/" + id, {
+            method: "PUT",
+            data: eaten
+        }).then(function(){
+            console.log("Burger status changed")
+            location.reload()
+        })
+    }
+
 </script>

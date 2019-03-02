@@ -20,7 +20,7 @@ $(function() {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    var newBurger = {
+    var newBurgers = {
       name: $("#bu").val().trim(),
     };
 

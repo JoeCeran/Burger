@@ -50,13 +50,6 @@ var orm = {
       cb(result);
     });
   },
-  insert: function(table, cols, vals, cb) {
-    let queryString = "INSERT INTO " + table + "(" + cols + ") VALUES ('" + vals + "');"
-    connection.query(queryString, function(err, data){
-        if (err) throw err;
-        cb(data)
-    })
-  },
   create: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 

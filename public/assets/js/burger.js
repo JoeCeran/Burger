@@ -21,11 +21,12 @@ $(function() {
     event.preventDefault();
 
     var newBurger = {
-      burger_name: $("#bg").val().trim()
+      burger_name: $("#bg").val().trim(),
+
     };
 
     // Send the POST request.
-    $.ajax("/api/burgers/", {
+    $.ajax("/api/burgers", {
       type: "POST",
       data: newBurger
     }).then(
